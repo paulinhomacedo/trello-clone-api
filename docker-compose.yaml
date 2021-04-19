@@ -10,13 +10,12 @@ services:
       - .:/app
     stdin_open: true
     tty: true
-    #command: ["uvicorn", "main:app", "--reload", "--host", "0.0.0.0"]
-    command: ["python", "main.py"]
+    command: ["python", "trello_clone_api/main.py"]
     depends_on:
       - db
     ports:
       - 8000:8000
-    
+
   db:
     image: postgres:13.2-alpine
     volumes:
